@@ -1,0 +1,473 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0;
+    padding: 10px;
+}
+
+/* Full-width header */
+.header {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 0px;
+    padding: 15px 20px;
+    background-color: #78c0fc; /* Light gray */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensures it stays above other elements */
+}
+
+/* Right-side container */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between icons */
+}
+
+/* Icons */
+.header a {
+    text-decoration: none;
+    font-size: 26px;
+    color: #333;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.header a:hover {
+    color: #2790f1;
+    transform: scale(1.1);
+}
+
+/* Messages dropdown */
+.messages-dropdown {
+    position: relative;
+}
+
+.messages-btn {
+    background: none;
+    border: none;
+    font-size: 26px;
+    color: #000; /* Set color to black */
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+    margin-top: 5px;
+}
+
+.messages-btn:hover {
+    color: #2790f1; /* Blue on hover */
+    transform: scale(1.1);
+}
+
+
+.messages-list {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 450px;
+    background: rgb(67, 115, 248);
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    display: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.messages-dropdown:hover .messages-list {
+    display: block;
+    width: 368px;
+}
+
+.messages-list li {
+    padding: 10px;
+}
+
+.messages-list li a {
+    text-decoration: none;
+    color: #333;
+    background-color: white;
+    display: block;
+    font-size: 27px;
+}
+
+.messages-list li a:hover {
+    background: #f0f0f0;
+}
+
+
+/* Sidebar for user list */
+.user-sidebar {
+    width: 25%;
+    background: #ffe4e6;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.user-sidebar h2 {
+    margin-top: 0;
+}
+
+.user-sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.user-sidebar ul li {
+    margin: 10px 0;
+}
+
+.user-sidebar ul li a {
+    text-decoration: none;
+    color: #ff4d6d;
+    font-weight: bold;
+}
+
+/* Account info container */
+.account-info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1px;
+    background-color: #aae4ff; /* Light gray background */
+    border-radius: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 99%;
+    max-width: 2000px; /* Adjust width as needed */
+    margin: 20px auto; /* Center it */
+    margin-left: 0;
+}
+
+/* Welcome section */
+.welcome {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* User circle icon */
+.welcome i {
+    font-size: 40px; /* Adjust size */
+    color: #000; /* Default color */
+    transition: color 0.3s ease, transform 0.2s ease;
+    margin-left: 10px;
+}
+
+.welcome i:hover {
+    color: #333; /* Blue on hover */
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Modal Background */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Content */
+.modal-content {
+    background: #dbe2ec;
+    padding: 20px;
+    width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    margin-top: 100px;
+    margin-left: 400px;
+}
+
+/* Close Button */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.modal h2 {
+    text-align: center;
+}
+
+.modal label {
+    margin-top: 10px;
+}
+
+/* Form Styling */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, textarea {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    resize: none;
+}
+
+/* Upload Button */
+#photo-container {
+    margin-top: 10px;
+}
+
+.modal button i {
+    font-size: 26px;
+}
+
+.file-input {
+    display: none;
+}
+
+.file-button {
+    display: inline-block;
+    background:  rgb(142, 180, 216);
+    color: #000;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 26px;
+    border: none;
+    text-align: center;
+}
+
+.file-button:hover {
+    background: rgb(93, 140, 184);
+}
+
+.post-button {
+    width: 100%;
+    display: inline-block;
+    background:  rgb(142, 180, 216);
+    color: #000;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    border: none;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Add Product Button */
+.add-product {
+    margin-left: 10px; /* Pushes button to the right */
+}
+
+.add-product .btn {
+    background-color: #729fbd;
+    color: #2e2e2e;
+    border: none;
+    padding: 10px 320px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    text-align: left; /* Aligns text to the left */
+    width: 1200px; /* Adjust width to maintain alignment */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Push text to the left */
+    padding-left: 20px; /* Adds left padding for spacing */
+    margin-top: 4px;
+}
+
+.add-product .btn:hover {
+    background-color: #91b0c5;
+    transform: none;
+}
+
+.product-list {
+    width: 100%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+h2 {
+    position: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Grid layout with single items per row */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Ensures each product takes a full row */
+    gap: 15px;
+    padding: 20px;
+}
+
+.product-item {
+    background: #f3eef0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: left;
+    font-weight: bold;
+    transition: none;
+    max-width: 1600px;
+    margin: 1;
+    margin-left: 0;
+    height: 385px;
+}
+
+.product-item:hover {
+    transform: none;
+}
+
+.product-item img {
+    width: 30%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 0;
+
+}
+
+.product-item .product-posted-by .bx {
+    font-size: 50px;
+    margin-left: 0;
+}
+
+.product-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+}
+
+.report-product {
+    color: black;
+    font-size: 30px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.report-product:hover {
+    text-decoration: underline;
+}
+
+.product-info {
+    margin-top: 10px;
+}
+
+.product-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.product-details{
+    margin-top: 20px;
+}
+
+.product-price {
+    font-size: 18px;
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.product-actions {
+    margin-top: 3px;
+}
+
+.like-btn, .comment-btn, .view-comments-btn, .select-user {
+    background-color: #dbd8d9;
+    color: black;
+    border: none;
+    padding: 8px 12px;
+    margin: 15px;
+    margin-left: 0;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.report-product {
+    background-color: #f3eef0;
+    color: black;
+    border: none;
+    padding: 8px 12px;
+    margin: 5px;
+    margin-left: 0;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.like-btn:hover, .comment-btn:hover, .view-comments-btn:hover, .select-user:hover {
+    background-color: #cfcecf;
+}
+
+.report-product:hover{
+    background-color: #f3eef0;
+}
+
+.like-btn{
+    font-size: 30px;
+}
+
+.comment-btn{
+    font-size: 30px;
+}
+
+.report-product{
+    font-size: 30px;
+}
+
+.view-comments-btn{
+    font-size: 30px;
+}
+
+.select-user{
+    font-size: 30px;
+}
+
+.see-all-messages-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px; 
+    padding: 10px 20px;
+    background-color: #fff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 10px;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it stays on top of other content */
+}
+
+.see-all-messages-btn i {
+    font-size: 30px;
+}
+
+.see-all-messages-btn:hover {
+    background-color: #fff;
+}

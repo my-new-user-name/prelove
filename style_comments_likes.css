@@ -1,0 +1,131 @@
+/* style_comments_likes.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.header .btn {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    background-color: #2c3e50;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header .btn:hover {
+    background-color: #1abc9c;
+}
+
+/* Main Container */
+.containers {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.containers h1 {
+    font-size: 36px;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+table th, table td {
+    padding: 15px 20px;
+    text-align: center;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+table th {
+    background-color: #16a085;
+    color: white;
+    font-size: 18px;
+}
+
+table td {
+    font-size: 16px;
+    color: #34495e;
+}
+
+table tr:hover {
+    background-color: #f9f9f9;
+}
+
+table img {
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* View Comments Link */
+table a {
+    text-decoration: none;
+    color: #16a085;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+table a:hover {
+    color: #1abc9c;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .containers {
+        padding: 20px;
+    }
+
+    table th, table td {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+
+    .header .btn {
+        font-size: 20px;
+        padding: 8px 12px;
+    }
+}
+
+/* View Comments Button */
+.view-comments-btn {
+    display: inline-block;
+    background-color: #16a085;
+    color: white;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.view-comments-btn:hover {
+    background-color: #138d75;
+    transform: scale(1.05);
+}
